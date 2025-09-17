@@ -64,12 +64,23 @@ const Index = () => {
             />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Intelligent Documentation Search
+            AI Context Engineering Made Simple
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Find exactly what you're looking for in your documentation. 
-            Ask questions naturally and get contextual, relevant answers instantly.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-6">
+            Transform simple prompts into powerful AI interactions. Our context manager 
+            automatically finds and structures the right information for your AI models.
           </p>
+          
+          {/* Context Engineering Explanation */}
+          <div className="max-w-3xl mx-auto bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm">
+            <h2 className="text-xl font-semibold text-foreground mb-3">What is Context Engineering?</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Context isn't just your prompt—it's the complete information payload provided to an LLM at inference time. 
+              This includes all structured informational components that the model needs to accomplish your task effectively. 
+              <span className="text-primary font-medium"> Our platform makes this complex process simple</span>, 
+              automatically finding and organizing the right context for faster, more accurate AI responses.
+            </p>
+          </div>
         </header>
 
         {/* Search Interface */}
@@ -81,17 +92,17 @@ const Index = () => {
           {/* Search Examples */}
           {results.length === 0 && !currentQuery && (
             <div className="mt-8 animate-fade-in">
-              <p className="text-sm text-muted-foreground mb-4 text-center">
-                Try searching for:
-              </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                {[
-                  "summarize plugin docs",
-                  "generate onboarding guide", 
-                  "API authentication",
-                  "webhook setup",
-                  "database migration"
-                ].map((example) => (
+               <p className="text-sm text-muted-foreground mb-4 text-center">
+                 Try context engineering examples:
+               </p>
+               <div className="flex flex-wrap justify-center gap-2">
+                 {[
+                   "optimize prompt for code review",
+                   "context for user onboarding", 
+                   "API integration patterns",
+                   "troubleshooting workflows",
+                   "best practices documentation"
+                 ].map((example) => (
                   <button
                     key={example}
                     onClick={() => handleSearch(example)}
@@ -150,7 +161,7 @@ const Index = () => {
       <footer className="mt-16 py-8 border-t border-border bg-card/50">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-muted-foreground">
-            Powered by Contexta • Intelligent Documentation Search
+            Powered by Contexta • AI Context Engineering Platform
           </p>
         </div>
       </footer>

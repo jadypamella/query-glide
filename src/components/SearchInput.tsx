@@ -31,10 +31,10 @@ export const SearchInput = ({ onSearch, onAddDocument, isLoading = false }: Sear
 
   const CurrentIcon = mode === 'search' ? Search : Plus;
   const placeholder = mode === 'search' 
-    ? "Ask anything about your documentation..."
-    : "Enter document title to add...";
-  const buttonText = mode === 'search' ? "Search" : "Add Document";
-  const loadingText = mode === 'search' ? "Searching..." : "Adding...";
+    ? "Enter your prompt - we'll find the perfect context..."
+    : "Add new context document or knowledge base...";
+  const buttonText = mode === 'search' ? "Find Context" : "Add Document";
+  const loadingText = mode === 'search' ? "Finding context..." : "Adding...";
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-2xl mx-auto">
