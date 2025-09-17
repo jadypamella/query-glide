@@ -1,5 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin } from "lucide-react";
+import praneetImage from "@/assets/team/praneet-kala.png";
+import jadyImage from "@/assets/team/jady-pamella.png";
+import siqiImage from "@/assets/team/siqi-xiang.png";
+import elenaImage from "@/assets/team/elena-wei.png";
+import supunImage from "@/assets/team/supun-chathuranga.png";
+import ziqingImage from "@/assets/team/ziqing-zhang.png";
 
 const AboutSection = () => {
   const teamMembers = [
@@ -8,6 +14,7 @@ const AboutSection = () => {
       role: "Workflow Automation Specialist",
       bio: "Expert in streamlining complex business processes and implementing AI-driven automation solutions.",
       linkedin: "praneet-kala-0b165678",
+      image: praneetImage,
       initials: "PK"
     },
     {
@@ -15,6 +22,7 @@ const AboutSection = () => {
       role: "AI, Cybersecurity & IT Consultant",
       bio: "Specialized in AI security frameworks and protecting intelligent systems from emerging threats.",
       linkedin: "jadypamella",
+      image: jadyImage,
       initials: "JP"
     },
     {
@@ -22,6 +30,7 @@ const AboutSection = () => {
       role: "AI Master's Student & Ex-Strategy Analyst",
       bio: "Bridging strategic business insights with cutting-edge AI research and implementation.",
       linkedin: "siqi-xiang",
+      image: siqiImage,
       initials: "SX"
     },
     {
@@ -29,6 +38,7 @@ const AboutSection = () => {
       role: "Security & Risk Operation Analyst",
       bio: "Ensuring robust security protocols and risk management for AI-powered systems.",
       linkedin: "zhicong-wei",
+      image: elenaImage,
       initials: "EW"
     },
     {
@@ -36,6 +46,7 @@ const AboutSection = () => {
       role: "Senior Fullstack Software Engineer",
       bio: "Building scalable, high-performance applications that power our context engineering platform.",
       linkedin: "supun-chathuranga-190372148",
+      image: supunImage,
       initials: "SC"
     },
     {
@@ -43,6 +54,7 @@ const AboutSection = () => {
       role: "Info System MSc Student",
       bio: "Researching advanced information systems and their application in AI context management.",
       linkedin: "ziqing-z-109395326",
+      image: ziqingImage,
       initials: "ZZ"
     }
   ];
@@ -60,43 +72,41 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className="group bg-card border border-border rounded-2xl p-8 shadow-soft hover:shadow-glow transition-all duration-300 animate-fade-in hover:-translate-y-2"
+              className="group text-center animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-center">
-                <Avatar className="w-24 h-24 mx-auto mb-6 ring-4 ring-primary/10 group-hover:ring-primary/20 transition-all duration-300">
-                  <AvatarImage src="" alt={member.name} />
-                  <AvatarFallback className="bg-gradient-primary text-primary-foreground text-xl font-semibold">
-                    {member.initials}
-                  </AvatarFallback>
-                </Avatar>
-                
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {member.name}
-                </h3>
-                
-                <p className="text-primary font-medium mb-4">
-                  {member.role}
-                </p>
-                
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {member.bio}
-                </p>
-                
-                <a
-                  href={`https://linkedin.com/in/${member.linkedin}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors duration-200"
-                >
-                  <Linkedin size={18} />
-                  <span className="text-sm font-medium">Connect</span>
-                </a>
-              </div>
+              <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300 group-hover:scale-105">
+                <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                <AvatarFallback className="bg-gradient-primary text-primary-foreground text-2xl font-semibold">
+                  {member.initials}
+                </AvatarFallback>
+              </Avatar>
+              
+              <h3 className="text-xl font-bold text-foreground mb-2">
+                {member.name}
+              </h3>
+              
+              <p className="text-primary font-medium mb-4">
+                {member.role}
+              </p>
+              
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm mx-auto">
+                {member.bio}
+              </p>
+              
+              <a
+                href={`https://linkedin.com/in/${member.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors duration-200 hover:scale-105"
+              >
+                <Linkedin size={18} />
+                <span className="text-sm font-medium">Connect</span>
+              </a>
             </div>
           ))}
         </div>
