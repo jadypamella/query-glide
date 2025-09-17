@@ -8,42 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
+    --background: 180 20% 99%;  /* Softer warm white */
+    --foreground: 180 15% 15%;  /* Softer dark gray */
 
     --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
+    --card-foreground: 180 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 180 15% 15%;
 
-    /* Contexta Brand Colors */
-    --primary: 213 79% 56%;  /* Contexta Blue #4A90E2 */
+    /* Pleasant AI/Context Color Scheme */
+    --primary: 175 60% 45%;  /* Soft Teal #4A9B8E */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 213 79% 70%;
-    --primary-dark: 224 71% 20%;  /* Navy Blue #1A365D */
+    --primary-light: 175 60% 60%;  /* Lighter Teal */
+    --primary-dark: 175 60% 30%;   /* Deeper Teal */
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 224 71% 4%;
+    --secondary: 180 15% 96%;  /* Softer secondary */
+    --secondary-foreground: 180 15% 15%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 180 10% 95%;  /* Softer muted */
+    --muted-foreground: 180 8% 50%;  /* Better contrast */
 
-    --accent: 213 79% 56%;
+    --accent: 175 60% 45%;  /* Match primary */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 55%;  /* Softer red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 213 79% 56%;
+    --border: 180 15% 88%;  /* Softer borders */
+    --input: 180 15% 88%;
+    --ring: 175 60% 45%;  /* Match primary */
 
     --radius: 0.75rem;
 
     /* Custom Design Tokens */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(220 14% 98%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(180 15% 97%));
     --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-large: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
@@ -60,38 +60,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 0 0% 95%;
+    --background: 180 15% 8%;   /* Softer dark background */
+    --foreground: 180 5% 92%;   /* Softer light text */
 
-    --card: 224 71% 4%;
-    --card-foreground: 0 0% 95%;
+    --card: 180 15% 10%;
+    --card-foreground: 180 5% 92%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 180 15% 10%;
+    --popover-foreground: 180 5% 92%;
 
-    --primary: 213 79% 56%;
+    --primary: 175 50% 55%;     /* Softer teal for dark mode */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 213 79% 70%;
-    --primary-dark: 224 71% 20%;
+    --primary-light: 175 50% 65%;
+    --primary-dark: 175 50% 35%;
 
-    --secondary: 224 71% 10%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 180 15% 15%;   /* Softer secondary */
+    --secondary-foreground: 180 5% 92%;
 
-    --muted: 224 71% 10%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 180 15% 15%;       /* Softer muted */
+    --muted-foreground: 180 8% 60%;
 
-    --accent: 213 79% 56%;
+    --accent: 175 50% 55%;      /* Match primary */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 60% 50%;   /* Softer destructive */
     --destructive-foreground: 0 0% 95%;
 
-    --border: 224 71% 15%;
-    --input: 224 71% 15%;
-    --ring: 213 79% 56%;
+    --border: 180 15% 20%;      /* Softer borders */
+    --input: 180 15% 20%;
+    --ring: 175 50% 55%;        /* Match primary */
 
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(224 71% 6%));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(180 15% 12%));
     --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
     --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
     --shadow-large: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);

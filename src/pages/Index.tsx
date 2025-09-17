@@ -3,7 +3,7 @@ import { SearchInput } from "@/components/SearchInput";
 import { SearchResults, SearchResult } from "@/components/SearchResults";
 import { searchDocuments } from "@/lib/mockDatabase";
 import { useToast } from "@/hooks/use-toast";
-import contextaLogo from "@/assets/contexta-logo.png";
+import contextaLogo from "@/assets/contexta-logo-new.png";
 
 const Index = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
