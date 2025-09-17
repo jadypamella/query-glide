@@ -56,26 +56,17 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center pt-16">
       <div className="container mx-auto px-4 py-12">
-        {/* Hero Content */}
+        {/* Consolidated Hero Content */}
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            AI Context Engineering
-            <span className="block text-primary">Made Simple</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-            Transform simple prompts into powerful AI interactions. Our context manager 
-            automatically finds and structures the right information for your AI models.
-          </p>
-          
-          {/* Emotional Hook Question */}
-          <div className="max-w-6xl mx-auto bg-card/50 border border-border rounded-2xl p-12 backdrop-blur-sm mb-12 shadow-elegant">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight text-center">
-              Tired of AI giving you generic, unhelpful responses when you need real solutions?
-            </h2>
-            <p className="text-muted-foreground leading-relaxed text-xl text-center max-w-4xl mx-auto">
-              You're not alone. <span className="text-primary font-semibold">Millions waste hours every day</span> crafting the "perfect prompt," 
-              only to get cookie-cutter answers that miss the mark. 
-              <span className="text-accent font-semibold block mt-3">The problem isn't your prompting skills—it's missing context.</span>
+          <div className="max-w-5xl mx-auto bg-card/50 border border-border rounded-3xl p-12 backdrop-blur-sm shadow-elegant">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
+              Tired of AI giving you generic responses?
+              <span className="block text-primary mt-4">We fix that with Context Engineering.</span>
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+              <span className="text-accent font-semibold">Millions waste hours daily</span> crafting perfect prompts, only to get cookie-cutter answers. 
+              Our platform automatically finds and structures the right context so your AI delivers 
+              <span className="text-primary font-semibold"> faster, more accurate responses every time.</span>
             </p>
           </div>
         </div>
