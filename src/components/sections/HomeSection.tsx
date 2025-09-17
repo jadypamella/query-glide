@@ -60,8 +60,8 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
         <div className="text-center mb-12 animate-fade-in">
           <div className="max-w-5xl mx-auto bg-card/50 border border-border rounded-3xl p-12 backdrop-blur-sm shadow-elegant">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
-              Tired of AI giving you generic responses?
-              <span className="block text-primary mt-4">We fix that with Context Engineering.</span>
+              Stop getting generic AI responses.
+              <span className="block text-primary mt-4">Start getting results.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               <span className="text-accent font-semibold">Millions waste hours daily</span> crafting perfect prompts, only to get cookie-cutter answers. 
