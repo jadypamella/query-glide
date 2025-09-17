@@ -201,50 +201,90 @@ const ArchitectureSection = () => {
           </div>
         </div>
 
-        {/* Detailed Explanation */}
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mt-24">
+        {/* Advanced Technologies Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-24">
+          {/* Efficiency & Optimization */}
           <div className="relative group animate-fade-in" style={{ animationDelay: '1.2s' }}>
             <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
-            <div className="relative bg-background/70 backdrop-blur-sm border border-primary/20 rounded-3xl p-10 hover:border-primary/40 transition-all duration-500">
-              <h3 className="text-3xl font-bold text-foreground mb-8 bg-gradient-primary bg-clip-text text-transparent">
-                Why Context Engineering Matters
+            <div className="relative bg-background/70 backdrop-blur-sm border border-primary/20 rounded-3xl p-8 hover:border-primary/40 transition-all duration-500">
+              <h3 className="text-xl font-bold text-foreground mb-6 bg-gradient-primary bg-clip-text text-transparent">
+                Efficiency & Optimization
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
-                  { title: 'Accuracy', description: 'Proper context reduces AI hallucinations and improves response quality by 70%' },
-                  { title: 'Efficiency', description: 'Automated context discovery saves 90% of the time spent on prompt engineering' },
-                  { title: 'Scalability', description: 'Consistent context management across all AI interactions in your organization' }
+                  { title: 'Token Budget', description: 'Context Reducer MCP compresses docs for cheaper, faster processing' },
+                  { title: 'Context Pruning', description: 'Drop irrelevant info for cleaner prompts and better accuracy' },
+                  { title: 'Metrics & Evaluation', description: 'Track context reuse, success rates, and token costs for clear ROI' }
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-4 group/item">
-                    <div className="w-3 h-3 bg-gradient-primary rounded-full mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
-                    <div>
-                      <strong className="text-foreground block mb-1">{item.title}:</strong>
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
+                  <div key={index} className="group/item">
+                    <strong className="text-foreground block mb-1 text-sm">{item.title}:</strong>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
+          {/* Intelligence & Learning */}
           <div className="relative group animate-fade-in" style={{ animationDelay: '1.4s' }}>
             <div className="absolute inset-0 bg-gradient-secondary rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
-            <div className="relative bg-background/70 backdrop-blur-sm border border-secondary/20 rounded-3xl p-10 hover:border-secondary/40 transition-all duration-500">
-              <h3 className="text-3xl font-bold text-foreground mb-8 bg-gradient-secondary bg-clip-text text-transparent">
-                Technical Advantages
+            <div className="relative bg-background/70 backdrop-blur-sm border border-secondary/20 rounded-3xl p-8 hover:border-secondary/40 transition-all duration-500">
+              <h3 className="text-xl font-bold text-foreground mb-6 bg-gradient-secondary bg-clip-text text-transparent">
+                Intelligence & Learning
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {[
-                  { title: 'Real-time Processing', description: 'Sub-second context discovery and structuring' },
-                  { title: 'Multi-source Integration', description: 'Combines data from documents, APIs, and knowledge bases' },
-                  { title: 'Adaptive Learning', description: 'Improves context quality based on usage patterns' }
+                  { title: 'Few-Shot Learning', description: 'Example-driven context with structured snippets for better results' },
+                  { title: 'Memory Systems', description: 'Context Memory MCP persists knowledge across sessions' },
+                  { title: 'Retrieval Augmentation', description: 'Context Selector MCP finds relevant docs on demand' }
                 ].map((item, index) => (
-                  <div key={index} className="flex gap-4 group/item">
-                    <div className="w-3 h-3 bg-gradient-secondary rounded-full mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
-                    <div>
-                      <strong className="text-foreground block mb-1">{item.title}:</strong>
-                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
+                  <div key={index} className="group/item">
+                    <strong className="text-foreground block mb-1 text-sm">{item.title}:</strong>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Enterprise & Control */}
+          <div className="relative group animate-fade-in" style={{ animationDelay: '1.6s' }}>
+            <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="relative bg-background/70 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 hover:border-accent/40 transition-all duration-500">
+              <h3 className="text-xl font-bold text-foreground mb-6 bg-gradient-accent bg-clip-text text-transparent">
+                Enterprise & Control
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { title: 'Control Flow', description: 'Sequential Thinking MCP orchestrates multi-step reasoning' },
+                  { title: 'Cognitive Tools', description: 'Reusable prompt patterns and templates for consistent quality' },
+                  { title: 'Symbolic Mechanisms', description: 'Rule-based compliance checks ensure policy adherence' }
+                ].map((item, index) => (
+                  <div key={index} className="group/item">
+                    <strong className="text-foreground block mb-1 text-sm">{item.title}:</strong>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Future Technologies */}
+          <div className="relative group animate-fade-in" style={{ animationDelay: '1.8s' }}>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-destructive/20 rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="relative bg-background/70 backdrop-blur-sm border border-destructive/20 rounded-3xl p-8 hover:border-destructive/40 transition-all duration-500">
+              <h3 className="text-xl font-bold text-foreground mb-6 bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent">
+                Future Technologies
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { title: 'Neural Field Theory', description: 'Dynamic context auto-adaptation as new data arrives' },
+                  { title: 'Quantum Semantics', description: 'Context-dependent meaning interpretation in superposition' },
+                  { title: 'Multi-Context Exploration', description: 'Parallel prompt execution with intelligent selection' }
+                ].map((item, index) => (
+                  <div key={index} className="group/item">
+                    <strong className="text-foreground block mb-1 text-sm">{item.title}:</strong>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{item.description}</p>
                   </div>
                 ))}
               </div>
