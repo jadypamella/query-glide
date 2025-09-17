@@ -4,7 +4,7 @@ import praneetImage from "@/assets/team/praneet-kala.png";
 import jadyImage from "@/assets/team/jady-pamella.png";
 import siqiImage from "@/assets/team/siqi-xiang.png";
 import elenaImage from "@/assets/team/elena-wei.png";
-import supunImage from "@/assets/team/supun-chathuranga.png";
+import supunImage from "@/assets/team/supun-chathuranga.jpg";
 import ziqingImage from "@/assets/team/ziqing-zhang.png";
 
 const AboutSection = () => {
