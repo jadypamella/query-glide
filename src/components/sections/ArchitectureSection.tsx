@@ -1,11 +1,18 @@
-import { User, Brain, Database, FileText, ArrowDown, ArrowRight, Settings, Cpu, Sparkles } from "lucide-react";
+import { User, Brain, Database, FileText, ArrowDown, ArrowRight, Settings, Sparkles, ChevronDown } from "lucide-react";
 
 const ArchitectureSection = () => {
   return (
-    <section id="architecture" className="py-20 bg-gradient-to-br from-background to-secondary/5">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+    <section id="architecture" className="relative py-24 bg-gradient-elegant overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-secondary/5 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
             System Architecture
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -14,231 +21,232 @@ const ArchitectureSection = () => {
           </p>
         </div>
 
-        {/* Architecture Diagram */}
-        <div className="max-w-7xl mx-auto">
-          {/* User Input - Top */}
-          <div className="flex justify-center mb-8 animate-fade-in">
-            <div className="bg-card border-2 border-border rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 max-w-md">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-muted to-muted/60 rounded-xl flex items-center justify-center">
-                  <User className="text-foreground" size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">User Input</h3>
-              </div>
-              <p className="text-sm text-muted-foreground italic">
-                "I need an employment contract"
-              </p>
-            </div>
-          </div>
-
-          {/* Arrow Down */}
-          <div className="flex justify-center mb-8">
-            <ArrowDown className="text-primary animate-bounce" size={24} />
-          </div>
-
-          {/* Main System Components */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            {/* Context Management - Blue */}
-            <div className="bg-card border-2 border-primary/20 rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                  <Database className="text-primary-foreground" size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-primary">Context Management</h3>
-              </div>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Context Creation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Context Storage</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Context Retrieval</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-muted-foreground">Context Improvement</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Tool Management - Green */}
-            <div className="bg-card border-2 border-green-500/20 rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                  <Settings className="text-white" size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-green-500">Tool Management</h3>
-              </div>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Tool Registration</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Smart Matching</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Tool Activation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Result Processing</span>
-                </div>
-              </div>
-            </div>
-
-            {/* LLM Integration - Purple */}
-            <div className="bg-card border-2 border-purple-500/20 rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
-                  <Brain className="text-white" size={20} />
-                </div>
-                <h3 className="text-lg font-bold text-purple-500">LLM Integration</h3>
-              </div>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Metadata Extraction</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Context Analysis</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">AI Generation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-muted-foreground">Quality Assurance</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Central Database - Knowledge Layer */}
-          <div className="flex justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-            <div className="bg-card border-2 border-secondary/30 rounded-2xl p-8 shadow-elegant max-w-2xl">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <div className="w-16 h-16 bg-gradient-secondary rounded-2xl flex items-center justify-center">
-                  <Database className="text-secondary-foreground" size={24} />
-                </div>
-                <h3 className="text-xl font-bold text-foreground">Persistent Knowledge Layer</h3>
-              </div>
-              <p className="text-center text-muted-foreground text-sm">
-                Centralized storage for contexts, tools, metadata, and learning patterns
-              </p>
-              <div className="grid grid-cols-3 gap-4 mt-6 text-xs">
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <FileText className="text-primary" size={16} />
+        {/* Modern Flow Diagram */}
+        <div className="max-w-6xl mx-auto relative">
+          
+          {/* User Input */}
+          <div className="flex justify-center mb-16 animate-fade-in">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-background/80 backdrop-blur-sm border border-border/50 rounded-3xl p-8 hover:border-primary/30 transition-all duration-500">
+                <div className="flex items-center justify-center gap-6">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-elegant">
+                    <User className="text-primary-foreground" size={24} />
                   </div>
-                  <span className="text-muted-foreground">Contexts</span>
-                </div>
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <Settings className="text-green-500" size={16} />
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-foreground mb-2">User Input</h3>
+                    <p className="text-muted-foreground italic">"I need an employment contract"</p>
                   </div>
-                  <span className="text-muted-foreground">Tools</span>
-                </div>
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <Brain className="text-purple-500" size={16} />
-                  </div>
-                  <span className="text-muted-foreground">Metadata</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Arrow Down */}
-          <div className="flex justify-center mb-8">
-            <ArrowDown className="text-primary animate-bounce" size={24} />
+          {/* Flow Arrow */}
+          <div className="flex justify-center mb-16">
+            <div className="flex flex-col items-center gap-2">
+              <ChevronDown className="text-primary animate-bounce" size={32} />
+              <div className="w-px h-8 bg-gradient-to-b from-primary to-transparent"></div>
+            </div>
           </div>
 
-          {/* Output - Bottom */}
+          {/* Main Processing Layer */}
+          <div className="relative mb-16">
+            {/* Connection Lines */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent transform -translate-y-1/2"></div>
+            
+            <div className="grid lg:grid-cols-3 gap-12 relative">
+              {/* Context Management */}
+              <div className="relative group animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="relative bg-background/70 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 transition-all duration-500">
+                  <div className="text-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-soft">
+                      <Database className="text-primary-foreground" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-2">Context Management</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {['Context Creation', 'Context Storage', 'Context Retrieval', 'Context Improvement'].map((item, index) => (
+                      <div key={index} className="flex items-center gap-3 text-sm">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Tool Management */}
+              <div className="relative group animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                <div className="absolute inset-0 bg-gradient-secondary rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="relative bg-background/70 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 hover:border-secondary/40 transition-all duration-500">
+                  <div className="text-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-soft">
+                      <Settings className="text-secondary-foreground" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold text-secondary mb-2">Tool Management</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {['Tool Registration', 'Smart Matching', 'Tool Activation', 'Result Processing'].map((item, index) => (
+                      <div key={index} className="flex items-center gap-3 text-sm">
+                        <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></div>
+                        <span className="text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* LLM Integration */}
+              <div className="relative group animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-lg opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="relative bg-background/70 backdrop-blur-sm border border-accent/20 rounded-2xl p-8 hover:border-accent/40 transition-all duration-500">
+                  <div className="text-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-soft">
+                      <Brain className="text-accent-foreground" size={28} />
+                    </div>
+                    <h3 className="text-xl font-bold text-accent mb-2">LLM Integration</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {['Metadata Extraction', 'Context Analysis', 'AI Generation', 'Quality Assurance'].map((item, index) => (
+                      <div key={index} className="flex items-center gap-3 text-sm">
+                        <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
+                        <span className="text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Flow Arrows Between Components */}
+            <div className="hidden lg:flex absolute top-1/2 left-0 right-0 justify-between items-center transform -translate-y-1/2 px-12">
+              <div className="flex-1 flex justify-end pr-8">
+                <ArrowRight className="text-primary/60" size={24} />
+              </div>
+              <div className="flex-1 flex justify-end pr-8">
+                <ArrowRight className="text-secondary/60" size={24} />
+              </div>
+            </div>
+          </div>
+
+          {/* Flow Arrow */}
+          <div className="flex justify-center mb-16">
+            <div className="flex flex-col items-center gap-2">
+              <ChevronDown className="text-accent animate-bounce" size={32} />
+              <div className="w-px h-8 bg-gradient-to-b from-accent to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Central Database */}
+          <div className="flex justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <div className="relative group max-w-3xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-xl opacity-30"></div>
+              <div className="relative bg-background/80 backdrop-blur-sm border border-border/50 rounded-3xl p-12">
+                <div className="text-center mb-8">
+                  <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-elegant">
+                    <Database className="text-primary-foreground" size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">Persistent Knowledge Layer</h3>
+                  <p className="text-muted-foreground">
+                    Centralized storage for contexts, tools, metadata, and learning patterns
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-3 gap-8">
+                  {[
+                    { icon: FileText, label: 'Contexts', color: 'primary' },
+                    { icon: Settings, label: 'Tools', color: 'secondary' },
+                    { icon: Brain, label: 'Metadata', color: 'accent' }
+                  ].map((item, index) => (
+                    <div key={index} className="text-center group">
+                      <div className={`w-16 h-16 bg-${item.color}/20 border border-${item.color}/30 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-${item.color}/30 transition-colors`}>
+                        <item.icon className={`text-${item.color}`} size={20} />
+                      </div>
+                      <span className="text-muted-foreground font-medium">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Flow Arrow */}
+          <div className="flex justify-center mb-16">
+            <div className="flex flex-col items-center gap-2">
+              <ChevronDown className="text-destructive animate-bounce" size={32} />
+              <div className="w-px h-8 bg-gradient-to-b from-destructive to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Enhanced Output */}
           <div className="flex justify-center animate-fade-in" style={{ animationDelay: '1s' }}>
-            <div className="bg-card border-2 border-yellow-500/20 rounded-2xl p-6 shadow-soft hover:shadow-glow transition-all duration-300 max-w-md">
-              <div className="flex items-center gap-4 mb-3">
-                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
-                  <Sparkles className="text-white" size={20} />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 to-primary/20 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-background/80 backdrop-blur-sm border border-destructive/20 rounded-3xl p-8 hover:border-destructive/30 transition-all duration-500">
+                <div className="flex items-center justify-center gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-destructive to-primary rounded-2xl flex items-center justify-center shadow-elegant">
+                    <Sparkles className="text-destructive-foreground" size={24} />
+                  </div>
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-destructive mb-2">Enhanced Output</h3>
+                    <p className="text-muted-foreground italic">
+                      "Employment Contract Draft" • "Plugin Guide" • "API Documentation"
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-yellow-600 dark:text-yellow-400">Enhanced Output</h3>
               </div>
-              <p className="text-sm text-muted-foreground italic">
-                "Employment Contract Draft" • "Plugin Guide" • "API Documentation"
-              </p>
-            </div>
-          </div>
-
-          {/* Flow Arrows for Desktop */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            {/* Connecting lines between components */}
-            <div className="relative h-full">
-              {/* Horizontal connection lines */}
-              <div className="absolute top-1/2 left-1/4 right-3/4 h-0.5 bg-gradient-to-r from-primary/30 to-green-500/30 transform -translate-y-1/2"></div>
-              <div className="absolute top-1/2 left-1/2 right-1/4 h-0.5 bg-gradient-to-r from-green-500/30 to-purple-500/30 transform -translate-y-1/2"></div>
             </div>
           </div>
         </div>
 
         {/* Detailed Explanation */}
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-soft animate-fade-in" style={{ animationDelay: '0.8s' }}>
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Why Context Engineering Matters
-            </h3>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Accuracy:</strong> Proper context reduces AI hallucinations and improves response quality by 70%
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Efficiency:</strong> Automated context discovery saves 90% of the time spent on prompt engineering
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Scalability:</strong> Consistent context management across all AI interactions in your organization
-                </p>
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mt-24">
+          <div className="relative group animate-fade-in" style={{ animationDelay: '1.2s' }}>
+            <div className="absolute inset-0 bg-gradient-primary rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="relative bg-background/70 backdrop-blur-sm border border-primary/20 rounded-3xl p-10 hover:border-primary/40 transition-all duration-500">
+              <h3 className="text-3xl font-bold text-foreground mb-8 bg-gradient-primary bg-clip-text text-transparent">
+                Why Context Engineering Matters
+              </h3>
+              <div className="space-y-6">
+                {[
+                  { title: 'Accuracy', description: 'Proper context reduces AI hallucinations and improves response quality by 70%' },
+                  { title: 'Efficiency', description: 'Automated context discovery saves 90% of the time spent on prompt engineering' },
+                  { title: 'Scalability', description: 'Consistent context management across all AI interactions in your organization' }
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4 group/item">
+                    <div className="w-3 h-3 bg-gradient-primary rounded-full mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
+                    <div>
+                      <strong className="text-foreground block mb-1">{item.title}:</strong>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          <div className="bg-card border border-border rounded-2xl p-8 shadow-soft animate-fade-in" style={{ animationDelay: '1s' }}>
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Technical Advantages
-            </h3>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Real-time Processing:</strong> Sub-second context discovery and structuring
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Multi-source Integration:</strong> Combines data from documents, APIs, and knowledge bases
-                </p>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Adaptive Learning:</strong> Improves context quality based on usage patterns
-                </p>
+          <div className="relative group animate-fade-in" style={{ animationDelay: '1.4s' }}>
+            <div className="absolute inset-0 bg-gradient-secondary rounded-3xl blur-xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
+            <div className="relative bg-background/70 backdrop-blur-sm border border-secondary/20 rounded-3xl p-10 hover:border-secondary/40 transition-all duration-500">
+              <h3 className="text-3xl font-bold text-foreground mb-8 bg-gradient-secondary bg-clip-text text-transparent">
+                Technical Advantages
+              </h3>
+              <div className="space-y-6">
+                {[
+                  { title: 'Real-time Processing', description: 'Sub-second context discovery and structuring' },
+                  { title: 'Multi-source Integration', description: 'Combines data from documents, APIs, and knowledge bases' },
+                  { title: 'Adaptive Learning', description: 'Improves context quality based on usage patterns' }
+                ].map((item, index) => (
+                  <div key={index} className="flex gap-4 group/item">
+                    <div className="w-3 h-3 bg-gradient-secondary rounded-full mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform"></div>
+                    <div>
+                      <strong className="text-foreground block mb-1">{item.title}:</strong>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
