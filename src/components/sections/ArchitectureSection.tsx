@@ -125,7 +125,7 @@ const ArchitectureSection = () => {
               <div className="flex-1 flex justify-end pr-8">
                 <ArrowRight className="text-primary/60" size={24} />
               </div>
-              <div className="flex-1 flex justify-end pr-8">
+              <div className="flex-1 flex justify-center">
                 <ArrowRight className="text-secondary/60" size={24} />
               </div>
             </div>
