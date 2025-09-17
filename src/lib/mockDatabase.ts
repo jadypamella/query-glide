@@ -17,6 +17,21 @@ const mockDocuments = [
     keywords: ['lease', 'agreement', 'rental', 'contract', 'legal', 'property', 'tenant', 'landlord']
   },
   {
+    id: 'services-contract-context',
+    title: 'Services and Supply Contract Context Template',
+    content: 'You are an expert legal document generator. Create a services and supply contract agreement with the following structure and content requirements: Document Type: Services and Supply Contract Agreement, Edition Number: [e.g. 1st, 2nd, Restated], Jurisdiction: [Country and legal context, e.g. Sweden]. Required Sections: Preamble, Recitals, Agreement Clauses including Parties, Scope of Services, Governance, Commercial Terms, Performance Obligations, Warranties, Confidentiality, Dispute Resolution, Term & Termination, Force Majeure, General Provisions, and Execution.',
+    keyTakeaways: [
+      'Include parties with registration numbers and jurisdictions',
+      'Define scope of services and deliverables clearly',
+      'Specify commercial terms and pricing model',
+      'Include performance obligations and SLAs',
+      'Add confidentiality and IP ownership clauses',
+      'Define dispute resolution and governing law'
+    ],
+    source: 'Legal Document Templates',
+    keywords: ['services', 'supply', 'contract', 'agreement', 'legal', 'commercial', 'deliverables', 'supplier', 'client']
+  },
+  {
     id: "doc-1",
     title: "API Authentication Guide",
     content: "Our API uses token-based authentication with JWT tokens. To authenticate, include the Authorization header with 'Bearer <token>' in your requests. Tokens expire after 24 hours and need to be refreshed using the /auth/refresh endpoint.",

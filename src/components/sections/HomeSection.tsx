@@ -2,6 +2,8 @@ import { useState } from "react";
 import { SearchInput } from "@/components/SearchInput";
 import { SearchResults, SearchResult } from "@/components/SearchResults";
 import { LeaseAgreementGenerator } from "@/components/LeaseAgreementGenerator";
+import { ServicesContractGenerator } from "@/components/ServicesContractGenerator";
+import { ContractTypeSelector } from "@/components/ContractTypeSelector";
 import { searchDocuments } from "@/lib/mockDatabase";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowDown } from "lucide-react";
@@ -15,6 +17,8 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentQuery, setCurrentQuery] = useState("");
   const [showLeaseGenerator, setShowLeaseGenerator] = useState(false);
+  const [showServicesGenerator, setShowServicesGenerator] = useState(false);
+  const [showContractSelector, setShowContractSelector] = useState(false);
   const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
@@ -23,6 +27,8 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
     setIsLoading(true);
     setCurrentQuery(query);
     setShowLeaseGenerator(false);
+    setShowServicesGenerator(false);
+    setShowContractSelector(false);
     
     // Check if this is a lease agreement request
     const isLeaseRequest = query.toLowerCase().includes('lease') && 
@@ -35,6 +41,29 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
       return;
     }
     
+    // Check if this is a services contract request
+    const isServicesRequest = (query.toLowerCase().includes('services') || 
+                              query.toLowerCase().includes('supply')) &&
+                             query.toLowerCase().includes('contract');
+    
+    if (isServicesRequest) {
+      setShowServicesGenerator(true);
+      setIsLoading(false);
+      return;
+    }
+    
+    // Check if this is a general contract request
+    const isGeneralContractRequest = query.toLowerCase().includes('contract') && 
+                                   !query.toLowerCase().includes('lease') && 
+                                   !query.toLowerCase().includes('services') &&
+                                   !query.toLowerCase().includes('supply');
+    
+    if (isGeneralContractRequest) {
+      setShowContractSelector(true);
+      setIsLoading(false);
+      return;
+    }
+    
     try {
       const searchResults = await searchDocuments(query);
       setResults(searchResults);
@@ -43,6 +72,15 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
       setResults([]);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleContractTypeSelection = (type: 'lease' | 'services') => {
+    setShowContractSelector(false);
+    if (type === 'lease') {
+      setShowLeaseGenerator(true);
+    } else {
+      setShowServicesGenerator(true);
     }
   };
 
@@ -103,7 +141,8 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
                 {[
                   "employment contract template",
                   "optimize prompt for code review",
-                  "I want a lease agreement",
+                   "services and supply contract",
+                   "I want a lease agreement",
                   "API integration patterns",
                   "troubleshooting workflows"
                 ].map((example) => (
@@ -131,18 +170,31 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
           </div>
         )}
 
+        {/* Contract Type Selector */}
+        {showContractSelector && (
+          <ContractTypeSelector 
+            query={currentQuery} 
+            onSelectType={handleContractTypeSelection}
+          />
+        )}
+
         {/* Lease Agreement Generator */}
         {showLeaseGenerator && (
           <LeaseAgreementGenerator query={currentQuery} />
         )}
 
+        {/* Services Contract Generator */}
+        {showServicesGenerator && (
+          <ServicesContractGenerator query={currentQuery} />
+        )}
+
         {/* Search Results */}
-        {!isLoading && !showLeaseGenerator && results.length > 0 && (
+        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && results.length > 0 && (
           <SearchResults results={results} query={currentQuery} />
         )}
 
         {/* No Results */}
-        {!isLoading && !showLeaseGenerator && currentQuery && results.length === 0 && (
+        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && currentQuery && results.length === 0 && (
           <div className="text-center py-12 animate-fade-in">
             <div className="max-w-md mx-auto bg-card rounded-2xl p-8 border border-border shadow-soft">
               <h3 className="text-xl font-medium text-foreground mb-3">
