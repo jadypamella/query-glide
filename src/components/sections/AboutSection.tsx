@@ -5,7 +5,7 @@ import jadyImage from "@/assets/team/jady-pamella.jpg";
 import siqiImage from "@/assets/team/siqi-xiang.jpg";
 import elenaImage from "@/assets/team/elena-wei.jpg";
 import supunImage from "@/assets/team/supun-chathuranga.jpg";
-import ziqingImage from "@/assets/team/ziqing-zhang.png";
+import ziqingImage from "@/assets/team/ziqing-zhang.jpg";
 
 const AboutSection = () => {
   const teamMembers = [
