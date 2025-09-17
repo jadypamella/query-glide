@@ -57,7 +57,7 @@ const Index = () => {
       <footer className="py-12 border-t border-border bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground">
-            © 2024 Contexta • AI Context Engineering Platform
+            © 2025 Contexta • AI Context Engineering Platform
           </p>
           <p className="text-sm text-muted-foreground/60 mt-2">
             Transforming AI interactions through intelligent context management

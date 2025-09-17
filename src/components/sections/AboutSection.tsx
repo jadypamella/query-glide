@@ -115,8 +115,8 @@ const AboutSection = () => {
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {[
             { number: '6+', label: 'Team Members' },
-            { number: '15+', label: 'Years Combined Experience' },
-            { number: '3', label: 'Specialization Areas' },
+            { number: '30+', label: 'Years Combined Experience' },
+            { number: '7', label: 'Specialization Areas' },
             { number: '100%', label: 'Commitment to Innovation' }
           ].map((stat, index) => (
             <div
