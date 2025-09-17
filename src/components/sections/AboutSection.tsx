@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin } from "lucide-react";
-import praneetImage from "@/assets/team/praneet-kala.png";
+import praneetImage from "@/assets/team/praneet-kala.jpg";
 import jadyImage from "@/assets/team/jady-pamella.jpg";
 import siqiImage from "@/assets/team/siqi-xiang.png";
 import elenaImage from "@/assets/team/elena-wei.jpg";
