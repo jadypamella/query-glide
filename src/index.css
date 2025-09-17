@@ -46,6 +46,7 @@ All colors MUST be HSL.
     /* Gradients - Ocean Green to Dark Blue */
     --gradient-primary: linear-gradient(135deg, hsl(220, 85%, 35%), hsl(185, 85%, 40%));
     --gradient-secondary: linear-gradient(135deg, hsl(185, 85%, 40%), hsl(185, 65%, 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(185, 65%, 55%), hsl(220, 85%, 35%));
     --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 98%), hsl(185, 15%, 95%));
     --gradient-brand: linear-gradient(135deg, hsl(220, 85%, 35%), hsl(185, 85%, 40%), hsl(185, 65%, 55%));
     --gradient-ocean: linear-gradient(135deg, hsl(185, 85%, 40%), hsl(220, 85%, 35%));
@@ -101,6 +102,7 @@ All colors MUST be HSL.
     /* Gradients - Enhanced ocean combinations for dark mode */
     --gradient-primary: linear-gradient(135deg, hsl(220, 85%, 55%), hsl(185, 85%, 50%));
     --gradient-secondary: linear-gradient(135deg, hsl(185, 85%, 50%), hsl(185, 65%, 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(185, 65%, 60%), hsl(220, 85%, 55%));
     --gradient-subtle: linear-gradient(180deg, hsl(220, 25%, 8%), hsl(220, 25%, 12%));
     --gradient-brand: linear-gradient(135deg, hsl(220, 85%, 55%), hsl(185, 85%, 50%), hsl(185, 65%, 60%));
     --gradient-ocean: linear-gradient(135deg, hsl(185, 85%, 50%), hsl(220, 85%, 55%));

@@ -62,7 +62,11 @@ export default {
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-accent": "var(--gradient-accent)",
         "gradient-subtle": "var(--gradient-subtle)",
+        "gradient-brand": "var(--gradient-brand)",
+        "gradient-ocean": "var(--gradient-ocean)",
       },
       boxShadow: {
         soft: "var(--shadow-soft)",
