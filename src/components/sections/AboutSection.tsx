@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Linkedin } from "lucide-react";
 import praneetImage from "@/assets/team/praneet-kala.jpg";
 import jadyImage from "@/assets/team/jady-pamella.jpg";
-import siqiImage from "@/assets/team/siqi-xiang.png";
+import siqiImage from "@/assets/team/siqi-xiang.jpg";
 import elenaImage from "@/assets/team/elena-wei.jpg";
 import supunImage from "@/assets/team/supun-chathuranga.jpg";
 import ziqingImage from "@/assets/team/ziqing-zhang.png";
