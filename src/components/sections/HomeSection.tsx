@@ -193,26 +193,58 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
           <SearchResults results={results} query={currentQuery} />
         )}
 
-        {/* No Results */}
+        {/* No Context Available */}
         {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && currentQuery && results.length === 0 && (
           <div className="text-center py-12 animate-fade-in">
-            <div className="max-w-md mx-auto bg-card rounded-2xl p-8 border border-border shadow-soft">
-              <h3 className="text-xl font-medium text-foreground mb-3">
-                No results found
+            <div className="max-w-lg mx-auto bg-card rounded-2xl p-8 border border-border shadow-soft">
+              <div className="w-16 h-16 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-medium text-foreground mb-4">
+                No Context Available
               </h3>
-              <p className="text-muted-foreground mb-6">
-                We couldn't find any documentation matching "{currentQuery}". 
-                Try refining your search or using different keywords.
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                We don't have specific context for "{currentQuery}" to provide an accurate and consistent response. 
+                Without the right context, AI responses can be generic or inconsistent.
               </p>
-              <button
-                onClick={() => {
-                  setResults([]);
-                  setCurrentQuery("");
-                }}
-                className="px-6 py-3 text-primary hover:bg-primary/5 border border-primary rounded-xl transition-all duration-200 shadow-soft"
-              >
-                Start New Search
-              </button>
+              
+              <div className="bg-muted/50 rounded-xl p-6 mb-6 text-left">
+                <h4 className="font-medium text-foreground mb-3">What you can do:</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Try our available templates: "lease agreement" or "services contract"</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Contact our legal team to add this context to our system</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Refine your search with more specific legal terms</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => {
+                    setResults([]);
+                    setCurrentQuery("");
+                  }}
+                  className="px-6 py-3 text-primary hover:bg-primary/5 border border-primary rounded-xl transition-all duration-200 shadow-soft"
+                >
+                  Try Again
+                </button>
+                <button
+                  onClick={() => window.open('mailto:legal@contexta.ai?subject=Context Request&body=Please add context for: ' + encodeURIComponent(currentQuery))}
+                  className="px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl transition-all duration-200 shadow-soft"
+                >
+                  Contact Legal Team
+                </button>
+              </div>
             </div>
           </div>
         )}
