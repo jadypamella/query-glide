@@ -67,7 +67,7 @@ const ArchitectureSection = () => {
                     <h3 className="text-xl font-bold text-primary mb-2">Context Management</h3>
                   </div>
                   <div className="space-y-4">
-                    {['Context Creation', 'Context Storage', 'Context Retrieval', 'Context Improvement'].map((item, index) => (
+                    {['Context Creation & Storage', 'Context Retrieval', 'Metadata & Quality Metrics', 'Context Improvement'].map((item, index) => (
                       <div key={index} className="flex items-center gap-3 text-sm">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-muted-foreground">{item}</span>
@@ -88,7 +88,7 @@ const ArchitectureSection = () => {
                     <h3 className="text-xl font-bold text-secondary mb-2">Tool Management</h3>
                   </div>
                   <div className="space-y-4">
-                    {['Tool Registration', 'Smart Matching', 'Tool Activation', 'Result Processing'].map((item, index) => (
+                    {['Dynamic Tool Registration', 'Tool-Context Matching', 'Automated Tool Discovery', 'Tool Activation'].map((item, index) => (
                       <div key={index} className="flex items-center gap-3 text-sm">
                         <div className="w-2 h-2 bg-secondary rounded-full flex-shrink-0"></div>
                         <span className="text-muted-foreground">{item}</span>
@@ -109,7 +109,7 @@ const ArchitectureSection = () => {
                     <h3 className="text-xl font-bold text-accent mb-2">LLM Integration</h3>
                   </div>
                   <div className="space-y-4">
-                    {['Metadata Extraction', 'Context Analysis', 'AI Generation', 'Quality Assurance'].map((item, index) => (
+                    {['AI Capabilities Integration', 'Context Improvement & Analysis', 'Metadata Extraction', 'Content Tagging'].map((item, index) => (
                       <div key={index} className="flex items-center gap-3 text-sm">
                         <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
                         <span className="text-muted-foreground">{item}</span>
