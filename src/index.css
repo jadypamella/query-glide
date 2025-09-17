@@ -8,51 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - Brand-aligned light theme */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
-    --card: 0 0% 96%;
-    --card-foreground: 0 0% 12%;
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 12%;
+    /* Base colors - Tech theme with grays and silvers */
+    --background: 210 20% 98%;
+    --foreground: 210 15% 15%;
+    --card: 210 15% 95%;
+    --card-foreground: 210 15% 20%;
+    --popover: 210 15% 95%;
+    --popover-foreground: 210 15% 20%;
     
-    /* Primary colors - Brand Blue */
-    --primary: 220 100% 50%;
+    /* Primary colors - Tech Blue */
+    --primary: 210 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 100% 65%;
+    --primary-glow: 210 85% 65%;
     
-    /* Secondary colors - Brand Purple */
-    --secondary: 280 100% 40%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary colors - Silver/Gray */
+    --secondary: 210 10% 70%;
+    --secondary-foreground: 210 15% 15%;
     
-    /* Accent colors - Brand Red */
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 0 100% 50%;
+    /* Accent colors - Neon Green */
+    --muted: 210 15% 88%;
+    --muted-foreground: 210 10% 50%;
+    --accent: 140 85% 55%;
     --accent-foreground: 0 0% 100%;
     
-    /* Destructive - Brand Red */
-    --destructive: 0 100% 50%;
+    /* Destructive - Orange accent */
+    --destructive: 25 95% 58%;
     --destructive-foreground: 0 0% 100%;
     
     /* Border and input */
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
-    --ring: 220 100% 50%;
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 210 85% 55%;
     
     /* Radius - Modern rounded corners */
     --radius: 1rem;
     
-    /* Gradients - Brand color combinations */
-    --gradient-primary: linear-gradient(135deg, hsl(220, 100%, 50%), hsl(280, 100%, 40%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280, 100%, 40%), hsl(0, 100%, 50%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 98%), hsl(220, 20%, 95%));
-    --gradient-brand: linear-gradient(135deg, hsl(220, 100%, 50%), hsl(280, 100%, 40%), hsl(0, 100%, 50%));
+    /* Gradients - Tech color combinations */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 85%, 55%), hsl(210, 10%, 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210, 10%, 70%), hsl(140, 85%, 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210, 20%, 98%), hsl(210, 15%, 95%));
+    --gradient-brand: linear-gradient(135deg, hsl(210, 85%, 55%), hsl(140, 85%, 55%), hsl(25, 95%, 58%));
+    --gradient-neon: linear-gradient(135deg, hsl(140, 85%, 55%), hsl(210, 85%, 55%));
     
-    /* Shadows - Brand color enhanced */
-    --shadow-soft: 0 4px 25px -8px hsl(220, 100%, 50%, 0.15);
-    --shadow-elegant: 0 12px 35px -12px hsl(220, 100%, 50%, 0.20);
-    --shadow-glow: 0 0 35px hsl(220, 100%, 65%, 0.30);
+    /* Shadows - Tech enhanced */
+    --shadow-soft: 0 4px 25px -8px hsl(210, 85%, 55%, 0.15);
+    --shadow-elegant: 0 12px 35px -12px hsl(210, 85%, 55%, 0.20);
+    --shadow-glow: 0 0 35px hsl(140, 85%, 55%, 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -65,48 +66,49 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Base colors - Brand Black background */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 90%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 90%;
+    /* Base colors - Tech dark theme */
+    --background: 210 15% 8%;
+    --foreground: 210 10% 92%;
+    --card: 210 15% 12%;
+    --card-foreground: 210 10% 88%;
+    --popover: 210 15% 12%;
+    --popover-foreground: 210 10% 88%;
     
-    /* Primary colors - Enhanced Brand Blue */
-    --primary: 220 100% 60%;
+    /* Primary colors - Enhanced Tech Blue */
+    --primary: 210 85% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 100% 70%;
+    --primary-glow: 210 85% 70%;
     
-    /* Secondary colors - Enhanced Brand Purple */
-    --secondary: 280 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary colors - Enhanced Silver/Gray */
+    --secondary: 210 10% 60%;
+    --secondary-foreground: 210 15% 15%;
     
-    /* Accent colors - Enhanced Brand Red */
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 100% 55%;
+    /* Accent colors - Enhanced Neon Green */
+    --muted: 210 15% 18%;
+    --muted-foreground: 210 10% 65%;
+    --accent: 140 85% 60%;
     --accent-foreground: 0 0% 100%;
     
-    /* Destructive - Brand Red */
-    --destructive: 0 100% 55%;
+    /* Destructive - Enhanced Orange accent */
+    --destructive: 25 95% 62%;
     --destructive-foreground: 0 0% 100%;
     
     /* Border and input */
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 220 100% 60%;
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 210 85% 60%;
     
-    /* Gradients - Enhanced brand combinations for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(220, 100%, 60%), hsl(280, 100%, 50%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280, 100%, 50%), hsl(0, 100%, 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 4%), hsl(220, 30%, 8%));
-    --gradient-brand: linear-gradient(135deg, hsl(220, 100%, 60%), hsl(280, 100%, 50%), hsl(0, 100%, 55%));
+    /* Gradients - Enhanced tech combinations for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 85%, 60%), hsl(210, 10%, 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210, 10%, 60%), hsl(140, 85%, 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(210, 15%, 8%), hsl(210, 15%, 12%));
+    --gradient-brand: linear-gradient(135deg, hsl(210, 85%, 60%), hsl(140, 85%, 60%), hsl(25, 95%, 62%));
+    --gradient-neon: linear-gradient(135deg, hsl(140, 85%, 60%), hsl(210, 85%, 60%));
     
-    /* Shadows - Enhanced glow for dark mode */
-    --shadow-soft: 0 4px 25px -8px hsl(220, 100%, 60%, 0.20);
-    --shadow-elegant: 0 12px 35px -12px hsl(220, 100%, 60%, 0.25);
-    --shadow-glow: 0 0 35px hsl(220, 100%, 70%, 0.40);
+    /* Shadows - Enhanced tech glow for dark mode */
+    --shadow-soft: 0 4px 25px -8px hsl(210, 85%, 60%, 0.20);
+    --shadow-elegant: 0 12px 35px -12px hsl(210, 85%, 60%, 0.25);
+    --shadow-glow: 0 0 35px hsl(140, 85%, 60%, 0.35);
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
