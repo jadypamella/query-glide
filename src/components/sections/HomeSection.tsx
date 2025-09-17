@@ -4,6 +4,7 @@ import { SearchResults, SearchResult } from "@/components/SearchResults";
 import { LeaseAgreementGenerator } from "@/components/LeaseAgreementGenerator";
 import { ServicesContractGenerator } from "@/components/ServicesContractGenerator";
 import { ContractTypeSelector } from "@/components/ContractTypeSelector";
+import PluginSpecGenerator from "@/components/PluginSpecGenerator";
 import { searchDocuments } from "@/lib/mockDatabase";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowDown } from "lucide-react";
@@ -19,6 +20,7 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
   const [showLeaseGenerator, setShowLeaseGenerator] = useState(false);
   const [showServicesGenerator, setShowServicesGenerator] = useState(false);
   const [showContractSelector, setShowContractSelector] = useState(false);
+  const [showPluginGenerator, setShowPluginGenerator] = useState(false);
   const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
@@ -29,6 +31,7 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
     setShowLeaseGenerator(false);
     setShowServicesGenerator(false);
     setShowContractSelector(false);
+    setShowPluginGenerator(false);
     
     // Check if this is a lease agreement request
     const isLeaseRequest = query.toLowerCase().includes('lease') && 
@@ -60,6 +63,18 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
     
     if (isGeneralContractRequest) {
       setShowContractSelector(true);
+      setIsLoading(false);
+      return;
+    }
+    
+    // Check if this is a plugin request
+    const isPluginRequest = query.toLowerCase().includes('plugin') || 
+                           (query.toLowerCase().includes('create') && 
+                            (query.toLowerCase().includes('extension') || 
+                             query.toLowerCase().includes('addon')));
+    
+    if (isPluginRequest) {
+      setShowPluginGenerator(true);
       setIsLoading(false);
       return;
     }
@@ -143,8 +158,8 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
                   "optimize prompt for code review",
                    "services and supply contract",
                    "I want a lease agreement",
-                  "API integration patterns",
-                  "troubleshooting workflows"
+                  "create a VS Code plugin",
+                  "OpenWebUI plugin specification"
                 ].map((example) => (
                   <button
                     key={example}
@@ -188,13 +203,18 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
           <ServicesContractGenerator query={currentQuery} />
         )}
 
+        {/* Plugin Specification Generator */}
+        {showPluginGenerator && (
+          <PluginSpecGenerator query={currentQuery} />
+        )}
+
         {/* Search Results */}
-        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && results.length > 0 && (
+        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && !showPluginGenerator && results.length > 0 && (
           <SearchResults results={results} query={currentQuery} />
         )}
 
         {/* No Context Available */}
-        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && currentQuery && results.length === 0 && (
+        {!isLoading && !showLeaseGenerator && !showServicesGenerator && !showContractSelector && !showPluginGenerator && currentQuery && results.length === 0 && (
           <div className="text-center py-12 animate-fade-in">
             <div className="max-w-lg mx-auto bg-card rounded-2xl p-8 border border-border shadow-soft">
               <div className="w-16 h-16 mx-auto mb-6 bg-muted rounded-full flex items-center justify-center">

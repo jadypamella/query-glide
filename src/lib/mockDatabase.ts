@@ -32,6 +32,21 @@ const mockDocuments = [
     keywords: ['services', 'supply', 'contract', 'agreement', 'legal', 'commercial', 'deliverables', 'supplier', 'client']
   },
   {
+    id: 'plugin-spec-context',
+    title: 'Plugin Specification Context Template',
+    content: 'You are an expert software engineer. Create a plugin for a host application using the following structure and content requirements: Document Type: Plugin Specification, Edition Number: [e.g. 1.0.0, 2.0.0], Target Host System: [Name of application or framework, e.g. VS Code, OpenWebUI], Programming Language: [e.g. JavaScript, Python, TypeScript]. Required Sections: Preamble, Plugin Architecture Overview, Manifest/Metadata File, Plugin API Interface, Core Logic Implementation, Event Handling/Triggers, Installation & Configuration, Testing & Validation, Security Considerations, and proper folder structure.',
+    keyTakeaways: [
+      'Include plugin metadata with name, ID, version, and permissions',
+      'Define clear API interface with inputs and outputs',
+      'Describe integration with host system APIs and hooks',
+      'Specify event triggers and handling mechanisms',
+      'Include installation steps and configuration requirements',
+      'Address security considerations and permission scope'
+    ],
+    source: 'Software Engineering Templates',
+    keywords: ['plugin', 'specification', 'software', 'development', 'api', 'integration', 'extension', 'addon', 'framework']
+  },
+  {
     id: "doc-1",
     title: "API Authentication Guide",
     content: "Our API uses token-based authentication with JWT tokens. To authenticate, include the Authorization header with 'Bearer <token>' in your requests. Tokens expire after 24 hours and need to be refreshed using the /auth/refresh endpoint.",
