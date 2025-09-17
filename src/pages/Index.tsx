@@ -2,12 +2,14 @@ import { useState } from "react";
 import { SearchInput } from "@/components/SearchInput";
 import { SearchResults, SearchResult } from "@/components/SearchResults";
 import { searchDocuments } from "@/lib/mockDatabase";
+import { useToast } from "@/hooks/use-toast";
 import contextaLogo from "@/assets/contexta-logo.png";
 
 const Index = () => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentQuery, setCurrentQuery] = useState("");
+  const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
     setIsLoading(true);
@@ -19,6 +21,31 @@ const Index = () => {
     } catch (error) {
       console.error("Search failed:", error);
       setResults([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleAddDocument = async (title: string) => {
+    setIsLoading(true);
+    
+    try {
+      // Simulate adding document
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast({
+        title: "Document Added",
+        description: `"${title}" has been added to your documentation.`,
+      });
+      // Clear results to return to initial state
+      setResults([]);
+      setCurrentQuery("");
+    } catch (error) {
+      console.error("Failed to add document:", error);
+      toast({
+        title: "Error",
+        description: "Failed to add document. Please try again.",
+        variant: "destructive",
+      });
     } finally {
       setIsLoading(false);
     }
@@ -48,7 +75,7 @@ const Index = () => {
         {/* Search Interface */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-full animate-scale-in">
-            <SearchInput onSearch={handleSearch} isLoading={isLoading} />
+            <SearchInput onSearch={handleSearch} onAddDocument={handleAddDocument} isLoading={isLoading} />
           </div>
           
           {/* Search Examples */}
@@ -84,7 +111,7 @@ const Index = () => {
           <div className="text-center py-12 animate-fade-in">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-card rounded-xl shadow-soft">
               <div className="animate-spin rounded-full h-5 w-5 border-2 border-primary border-t-transparent"></div>
-              <span className="text-muted-foreground">Searching documentation...</span>
+              <span className="text-muted-foreground">Processing...</span>
             </div>
           </div>
         )}
