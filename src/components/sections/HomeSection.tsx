@@ -67,14 +67,15 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
             automatically finds and structures the right information for your AI models.
           </p>
           
-          {/* Context Engineering Explanation */}
-          <div className="max-w-4xl mx-auto bg-card/50 border border-border rounded-2xl p-8 backdrop-blur-sm mb-12 shadow-elegant">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">What is Context Engineering?</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              Context isn't just your prompt—it's the complete information payload provided to an LLM at inference time. 
-              This includes all structured informational components that the model needs to accomplish your task effectively. 
-              <span className="text-primary font-semibold block mt-2">Our platform makes this complex process simple</span>, 
-              automatically finding and organizing the right context for faster, more accurate AI responses.
+          {/* Emotional Hook Question */}
+          <div className="max-w-6xl mx-auto bg-card/50 border border-border rounded-2xl p-12 backdrop-blur-sm mb-12 shadow-elegant">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight text-center">
+              Tired of AI giving you generic, unhelpful responses when you need real solutions?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed text-xl text-center max-w-4xl mx-auto">
+              You're not alone. <span className="text-primary font-semibold">Millions waste hours every day</span> crafting the "perfect prompt," 
+              only to get cookie-cutter answers that miss the mark. 
+              <span className="text-accent font-semibold block mt-3">The problem isn't your prompting skills—it's missing context.</span>
             </p>
           </div>
         </div>
