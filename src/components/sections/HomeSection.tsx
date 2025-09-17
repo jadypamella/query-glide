@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SearchInput } from "@/components/SearchInput";
 import { SearchResults, SearchResult } from "@/components/SearchResults";
+import { LeaseAgreementGenerator } from "@/components/LeaseAgreementGenerator";
 import { searchDocuments } from "@/lib/mockDatabase";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowDown } from "lucide-react";
@@ -13,11 +14,26 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentQuery, setCurrentQuery] = useState("");
+  const [showLeaseGenerator, setShowLeaseGenerator] = useState(false);
   const { toast } = useToast();
 
   const handleSearch = async (query: string) => {
+    if (!query.trim()) return;
+    
     setIsLoading(true);
     setCurrentQuery(query);
+    setShowLeaseGenerator(false);
+    
+    // Check if this is a lease agreement request
+    const isLeaseRequest = query.toLowerCase().includes('lease') && 
+                          (query.toLowerCase().includes('agreement') || 
+                           query.toLowerCase().includes('contract'));
+    
+    if (isLeaseRequest) {
+      setShowLeaseGenerator(true);
+      setIsLoading(false);
+      return;
+    }
     
     try {
       const searchResults = await searchDocuments(query);
@@ -87,7 +103,7 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
                 {[
                   "employment contract template",
                   "optimize prompt for code review",
-                  "user onboarding context", 
+                  "I want a lease agreement",
                   "API integration patterns",
                   "troubleshooting workflows"
                 ].map((example) => (
@@ -115,13 +131,18 @@ const HomeSection = ({ onNavigateToSection }: HomeSectionProps) => {
           </div>
         )}
 
+        {/* Lease Agreement Generator */}
+        {showLeaseGenerator && (
+          <LeaseAgreementGenerator query={currentQuery} />
+        )}
+
         {/* Search Results */}
-        {!isLoading && results.length > 0 && (
+        {!isLoading && !showLeaseGenerator && results.length > 0 && (
           <SearchResults results={results} query={currentQuery} />
         )}
 
         {/* No Results */}
-        {!isLoading && currentQuery && results.length === 0 && (
+        {!isLoading && !showLeaseGenerator && currentQuery && results.length === 0 && (
           <div className="text-center py-12 animate-fade-in">
             <div className="max-w-md mx-auto bg-card rounded-2xl p-8 border border-border shadow-soft">
               <h3 className="text-xl font-medium text-foreground mb-3">

@@ -3,6 +3,20 @@ import { SearchResult } from "@/components/SearchResults";
 // Mock database with sample documentation entries
 const mockDocuments = [
   {
+    id: 'lease-context',
+    title: 'Legal Lease Agreement Context Template',
+    content: 'You are an expert legal document generator. Create a lease document with the following structure and content requirements: Document Type: [Initial Lease / Amendment / Restatement / Joinder / Termination], Edition Number: [e.g. 1st, 2nd, 5th, Restated], Jurisdiction: [Country and legal context, e.g. Sweden]. Required Sections: Preamble, Recitals, Agreement Clauses including Premises, Term, Rent, Operating Expenses, and Execution.',
+    keyTakeaways: [
+      'Always include document type and edition number',
+      'Structure with Preamble, Recitals, and Agreement sections',
+      'Include premises description with square meters',
+      'Specify clear term dates and rent amounts',
+      'Add proper execution signatures'
+    ],
+    source: 'Legal Document Templates',
+    keywords: ['lease', 'agreement', 'rental', 'contract', 'legal', 'property', 'tenant', 'landlord']
+  },
+  {
     id: "doc-1",
     title: "API Authentication Guide",
     content: "Our API uses token-based authentication with JWT tokens. To authenticate, include the Authorization header with 'Bearer <token>' in your requests. Tokens expire after 24 hours and need to be refreshed using the /auth/refresh endpoint.",
